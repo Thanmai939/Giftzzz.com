@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typewriting Effect with Video</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,700;1,700&display=swap');
+    #typewriter {
+      position: fixed;
+      top: 430px; /* adjust as needed */
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'IBM Plex Serif', serif;
+      font-size: 40px;
+      /*color: #690851;*/
+      color: #1b6894;
+      font-weight:bolder;
+    }
+
+    #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 50%;
+      overflow: hidden;
+      z-index: -1;
+      margin-top: 100px;
+      margin-left: 380px;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="video-container">
+    <video id="my-video" width="100%" height="100%" preload="auto" autoplay loop muted>
+      <source src="./logovideo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div id="typewriter"></div>
+
+  <script src="typewriter.js"></script>
+</body>
+
+<script>
+    // Define your website name
+    const websiteName = "Giftzzz.com";
+
+    // Set the typewriter effect speed (in milliseconds)
+    const typingSpeed = 400;
+
+    // Get the typewriter element
+    const typewriter = document.getElementById("typewriter");
+
+    // Initialize variables
+    let currentIndex = 0;
+    let displayText = "";
+
+    // Function to simulate typewriter effect
+    function typeWriter() {
+    if (currentIndex < websiteName.length) {
+        displayText += websiteName[currentIndex];
+        typewriter.innerHTML = displayText;
+        currentIndex++;
+        setTimeout(typeWriter, typingSpeed);
+    } else {
+        // Once typing is complete, redirect to the desired page
+        window.location.href = "afterlogin.html";
+    }
+    }
+
+    // Start the typewriter effect
+    typeWriter();
+
+</script>
+</html>

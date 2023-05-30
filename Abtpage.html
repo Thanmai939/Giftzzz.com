@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Abtuspage</title>
+
+        <style>
+            h1
+            {
+                text-align: center;
+                color: rgb(184, 22, 117);
+                font-size: 50px;
+            }
+            h4
+            {
+                text-align:center;
+                color: #720868c8;
+                font-size: 30px;
+                margin-top: -30px;
+            }
+            .about
+            {
+                line-height:30px;
+                position: relative;
+                top: -40px;
+                left: 10px;
+                color:#a18315;
+                font-size: 18px;
+                font-family: cursive;
+                font-weight: 200;
+                width:1000px;
+                text-align: justify;
+                text-justify: inter-word;
+                overflow: hidden;
+            }
+        </style>
+         <script>
+            var i =0;
+            var txt = "At Giftzzz.com, you’ll discover a gift basket for every occasion. Our unique, high-quality gifts are sure to impress even the most hard-to-please recipients.Thanks to the help of our valued customers and product supply companies, we have over ten years of experience in creating beautifully presented gift baskets filled with the most wonderful and unique items from around the world.Choose from our wide selection of specialized baskets, including occasions such as Business Gifts,Corporate Gift Baskets, Easter, Father’s Day, Birthday, Get Well, Thank You, and many more to find out and discover your perfect gift for that special person.Based on the key principle that consumer loyalty is only as dependable as the products and services we provide.Giftzzz.com  is committed to providing our Customers with the Highest Quality Products, delivered with the utmost Care for Customer Service available anywhere, in any industry.At Giftzzz.com we know that true value is not always measured in dollars and cents, however, we also understand clearly that price and affordability can often become an unwelcome obstacle when choosing any gift. Our commitment to maintaining the lowest possible prices based on optimal volume buying power gives us a leg up and helps us to pass those savings on to our Customers.";
+            var speed = 50;
+    
+            function typeWriter()
+            {
+                if (i < txt.length)
+                {
+                    document.getElementById("abt").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
+        </script>
+    </head>
+    
+    <body onload="typeWriter()">
+
+        <!--Start of tale-->
+        <div>
+            <h1>Giftzzz.Com</h1>
+            <h4>Welcome to our tiny little Tale</h4>
+        </div>
+        <center>
+        <div class="about">
+            <p id="abt"></p>
+        </div></center>
+
+        <!--image-->
+        <div style="position:relative;margin-top: -25px;">
+            <picture>
+                <img class="abtimg" src="pictures\abtusimg.jpg" style="width:1200px; height: 400px;margin-left: 200px;">
+            </picture>
+            <div class="center-align" style="position:absolute;left:0;right:0;text-align:center;bottom:6%;color:#FFFFFF;">
+                <div style="font-size:42px;font-weight:700">We Could Be Your Santa</div>
+                <div style="font-size:20px;">Delivering Happiness To Foster Your Relationships, Covering Over 20 Million Customers Around The Globe</div>
+            </div>
+        </div>
+
+        <div class="celeb">
+            <h1 style="text-align: center;">#CelebrateWithGiftzzz.com</h1>
+        </div>
+        <div class="gallery">
+            <center><img src="pictures/abt_img1.png" style="width: 1500px;"></center>
+            <center><img src="pictures/abt_img2.png" style="width: 1510px;"></center>
+        </div>
+    </body>
+</html>

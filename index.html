@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width= device-width,initial-scale=1.0">
+<title>Giftzzz.com</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+     :root
+        {
+            --pink:#e84393;
+        }
+        *
+        {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border:none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: .2s linear;
+        }
+        html
+        {
+            font-size: 60%;
+            scroll-behavior: smooth;
+            scroll-padding-top: 6rem;
+            overflow-x: hidden;
+        }
+        .first
+        {
+            position: fixed;
+            z-index: 5;
+            top: 0;left: 0;right: 0;
+            background: #fff;
+            padding: 2rem 9%;
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+        }
+        .first .logo
+        {
+            font-size: 3rem;
+            color: #333;
+            font-weight: bolder;
+        }
+        .first .logo span
+        {
+            color: var(--pink) ;
+        }
+        .first .navbar
+        {
+        margin-right: -100px;
+        }
+        .first .navbar a
+        {
+            font-size: 2rem;
+            padding: 0 1.5rem;
+            color: #666;
+        }
+        .first .navbar a:hover
+        {
+            color:var(--pink);
+        }
+        .first .div
+        {
+        margin-right: 40px;
+        }
+        .first .icons a
+        {
+            font-size: 3rem;
+            color: #333;
+            margin-left: 1.5rem;
+        }
+        .first .icons a:hover
+        {
+            color:var(--pink);
+        }
+        button
+        {
+            background-color: #e84393;
+            color: white;
+            padding: 14px 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 1.5rem;
+        }
+        .site-nav
+        {
+            background-color: #e9dfbc;
+            margin-top: -70px;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+            /*position: relative;*/
+            width: 1550px;
+            height: 60px;
+            position:fixed;
+            z-index: 5;
+        }
+        .site-nav li
+        {
+            margin-top: 7px;
+            display: inline-block;
+            font-family: roboto;
+            font-size: 19px;
+            font-weight: 500;
+        }
+        .site-nav li a 
+        {
+            display: inline-block;
+            font-family: roboto;
+            font-size: 16px;
+            font-weight: 500;
+            padding: 15px;
+            color: #000
+        }
+        .site-nav ul 
+        {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            font-weight: 100%;
+            position: relative;
+        }
+
+        .site-nav li:hover .dropdown-menu 
+        {
+            opacity: 1;
+            z-index: 999;
+            visibility: visible
+        }
+        .site-nav li a i 
+        {
+            padding-left: 5px
+        }
+
+        .site-nav li a:hover 
+        {
+            background-color: #fff;
+            color: #000
+        }
+
+        .site-nav .dropdown-menu
+        {
+            position:absolute;
+            width: 40%;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            box-shadow: 0 3px 1px #80808073;
+            padding: 10px 40px;
+            opacity: 0;
+            z-index: -1;
+            visibility: hidden;
+            -webkit-transition: all .2s;
+            transition: all .2s
+        }
+        .site-nav .dropdown-menu ul 
+        {
+            text-align: left;
+            margin-top: 10px;
+            overflow: auto
+        }
+        .site-nav .dropdown-menu h3 
+        {
+            color: #535353;
+            font-family: roboto;
+            font-size: 16px;
+            font-weight: 800;
+            padding-bottom: 10px;
+            border-bottom: solid 2px #e03838;
+            text-align: left;
+        }
+        .site-nav .dropdown-menu .menu-group 
+        {
+            width: 200px;
+            margin-right: 40px;
+            min-height: 130px
+        }
+        .site-nav .dropdown-menu .menu-group.lg 
+        {
+            width: 300px;
+            margin-left: auto;
+            margin-right: 0;
+            padding-left: 40px;
+            border-left: solid 1px #cccbcb
+        }
+
+        .site-nav .dropdown-menu .menu-group.lg .inner-box 
+        {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            text-align: left;
+            margin-top: 20px
+        }
+
+        .site-nav .dropdown-menu .menu-group.lg .inner-box figure 
+        {
+            padding: 5px;
+            border: 1px solid #cacaca
+        }
+
+        .site-nav .dropdown-menu .menu-group.lg .inner-box figure img 
+        {
+            width: 100px;
+            height: 100px;
+            -o-object-fit: cover;
+            object-fit: cover
+        }
+        .site-nav .dropdown-menu .menu-group.lg .inner-box .content-box 
+        {
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            padding-left: 15px
+        }
+        .site-nav .dropdown-menu .menu-group.lg .inner-box .content-box h4 
+        {
+            font-size: 16px;
+            font-weight: 300;
+            color: #343434
+        }
+
+        .site-nav .dropdown-menu .menu-group.lg .inner-box .content-box span 
+        {
+            font-size: 14px
+        }
+
+        .site-nav .dropdown-menu li 
+        {
+            display: block;
+            font-size: 14px;
+            font-family: roboto;
+            font-weight: 500;
+            color: #343434
+        }
+        .site-nav .dropdown-menu li a 
+        {
+            padding: 5px 0;
+            color: #343434
+        }
+        .site-nav .dropdown-menu li a:hover 
+        {
+            background-color: transparent;
+            color: #e84393;
+        }
+        .search-bar 
+        {
+            width: 400px;
+            display: -webkit-box;
+            display: -ms-flexbox; 
+            display: flex;
+            position: relative;
+            margin-left: 20px;
+        }
+        .search-bar input 
+        {
+            margin-left: 10px;
+            font-size: 14px;
+            padding: 10px;
+            border: 1px solid #dcdbdb;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            border-radius: 25px
+        }
+        .search-bar input:focus 
+        {
+            outline:#000;
+        }
+
+        input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration,input[type=search]::-webkit-search-results-button,input[type=search]::-webkit-search-results-decoration
+        {
+            display: none
+        }
+
+        .search-bar .search-btn 
+        {
+            position: absolute;
+            font-size: 17px;
+            top: 4px;
+            right: 10px;
+            border-radius: 2px;
+            padding: 5px;
+            background-color:#fff;
+            color: #000;
+        }
+
+       /*slide show styles*/
+        #slideshow 
+        {
+            overflow: hidden;
+            height: 580px;
+            width: 1500px;
+            margin-top: 165px;
+            border-radius: 20px;
+            margin-left: 10px;;
+        }
+        .slide 
+        {
+            float: left;
+            height: 510px;
+            width: 1500px;
+        }
+        .slide-wrapper
+        {
+            width: calc(1500px * 4);
+            animation: slide 20s ease infinite;
+        }    
+        @keyframes slide
+        {
+            20%
+            {
+                margin-left: 0px;
+            }
+            40%
+            {
+                margin-left: calc(-1500px * 1);
+            }
+            60% 
+            {
+                margin-left: calc(-1500px * 2);
+            }
+            80%
+            {
+                margin-left: calc(-1500px * 3);
+            }
+        }
+
+        /*Decoration Begins*/
+        .title-widget
+        {
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100px;
+            margin-top: 20px;
+            margin-bottom: 30px;
+
+        }
+        .title-widget .title-img
+        {
+            width:auto;
+            height:130px;
+            
+        }
+        .title-widget .title-column
+        {
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            margin-left:16px;
+        }
+        .title-widget .title-text
+        {
+            font-size:32px;
+            font-family:'PT Serif';
+            color:#2e2d42;
+            line-height:1.3;
+        }
+        .title-widget .title-text h1
+        {
+            font-size:40px;
+            font-family:'PT Serif';
+            color:#741e69;
+            line-height:1.3;
+            display:inline;
+        }
+        .title-widget .title-subtitle-text
+        {
+            font-size:18px;
+            font-family:cursive;
+            color:#d65c5c;
+            line-height:1.4;
+        }
+        /*Decoration Ends*/
+
+        /*Banner and display Begins*/
+        .gift-section .list-category 
+        {
+            padding: 15px 15px;
+            text-align: center;
+        }
+
+        .gift-section .list-category figure 
+        {
+            min-height: 50px;
+        }
+
+        .gift-banner-section figure img 
+        {
+            height: 50px;
+            width: 1490px;
+            margin-left: 15px;
+            justify-content: center;
+            -o-object-fit: cover;
+            /*border-radius: 5px;*/
+            object-fit: cover;
+        }
+        .flex.space-between 
+        {
+            background-color: #d2ad78cc;
+            margin-top: -45px;
+            padding: 45px 0px;
+            justify-content:center;
+            display: inline-block;
+            display: flex;
+            /* flex-direction: column; */
+        }
+        .gift_category
+        {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 15px;
+            padding: 0px;
+            margin-top: 10px;
+            margin-left: 19px;
+        }
+        .category-item
+        {
+            padding: 0 25px;
+        }
+        .category-item figure img 
+        {
+            margin-left: 30px;
+            margin-top: 30px;
+        }
+         /*Banner and display Ends*/
+
+        /*Flipping Cards Section*/
+        .flipcontainer
+        {
+            position:static;
+            width:200px;
+            height:250px;
+        }
+        .card
+        {
+            position:relative;
+            width: 200px;
+            height: 250px;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+        }
+        .front
+        {
+            position: absolute;
+            width: 200px;
+            height: 250px;
+            backface-visibility: hidden;
+            color: #333;
+        }
+        .back
+        {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            backface-visibility: hidden;
+            background: #fafafa;
+            color: #333;
+            transform: rotateY(180deg);
+            background: #de237e;
+            border-radius: 10%;
+        }
+        .flipcontainer:hover .card 
+        {
+          transform: rotateY(180deg);
+        }
+        .back h3
+        {
+            text-align: center;
+            margin-top: 17px;
+            color: white;
+            font-family:'Brush Script MT', cursive;
+            font-size: 20px;
+            text-decoration:underline;
+        }
+        .back p
+        {
+            font-family:cursive;
+            color: azure;
+            font-size: 13px;
+            justify-content: center;
+            margin-left: 30px;
+            margin-top: 20px;
+            width:80%;
+        }
+        .Maincontainer
+        {
+            display:flex;
+            justify-content: space-between;
+            width: 1200px;
+            margin-left: 150px;
+            margin-top: 30px;
+            position:static;
+            z-index: -1;
+        }
+        .front img
+        {
+            width:200px;
+            height: 200px;
+            border-radius: 10%;
+        }
+        /*Flipping Cards ends*/
+        .personalised
+        {
+            position: relative;
+        }
+        .img1 
+        {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        .img2 
+        {
+            position: absolute;
+            top: 190px;
+            left: 180px;
+        }
+       
+        .Ad h3
+        {
+            font-size: 30px;
+            font-family: 'PT Serif';
+            color: #741e69;
+            line-height: 1.3;
+            text-align: center;
+        }
+        /*footer starts here*/
+        footer
+        {
+            background-color: #c06587;
+        }
+        .footercontainer
+        {
+            width:100%;
+            padding:70px 30px 20px;
+        }
+        .socialIcons
+        {
+            display:flex;
+            justify-content:center;
+        }
+        .socialIcons a
+        {
+            text-decoration:none;
+            padding:10px;
+            margin:10px;
+
+        }
+        .socialIcons a
+        {
+            font-size: 4em;
+            color:black;
+            opacity:0.9;
+        }
+        .socialIcons a:hover
+        {
+            color:white;
+            transition:0.5s;
+
+        }
+        .footerNav
+        {
+            margin:30px 0;
+            margin-top: 10px;
+        }
+        .footerNav ul
+        {
+            display:flex;
+            justify-content:center;
+            list-style-type: none;
+        }
+        .footerNav ul li a
+        {
+            color:white;
+            margin:20px;
+            text-decoration:none;
+            font-size:1.3em;
+            opacity:0.7;
+            transition:0.5s
+        }
+        .footerNav ul li a:hover
+
+        {
+            opacity:1;
+
+        }
+        .footerBottom
+        {
+            background-color: #c06587;
+            padding:20px;
+            text-align: center;
+        }
+        .footerBottom p
+        {
+            color:rgb(1, 1, 1);
+        }
+        .designer
+        {
+            opacity:0.7;
+            text-transform:uppercase;
+            letter-spacing:1px ;
+            font-weight:400 ;
+            margin:0px 5px;
+        }
+        @media(max-width:700px)
+        {
+            .footerNav ul
+            {
+                flex-direction: column;
+            }
+            .footerNav ul li
+            {
+                width:100%;
+                text-align: center;
+                margin:10px;
+            }
+        }
+        .handmade {
+            border: 1px solid rgb(181, 3, 3);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            padding: 10px;
+            height: 150px;
+            width: 1400px;
+            background-color: #b8404e26;
+            margin-top: 60px;
+            margin-left: 50px;
+            margin-bottom: 20px;
+        }
+        p 
+        {
+            margin-top: 40px;
+            font-size: 40px;
+            font-family: 'PT Serif';
+            color: #ba4350;
+            font-weight: 1000;
+            margin-left: 50px;
+            
+        }
+        .gift img
+        {
+            height: 250px;
+            width: 450px;
+            margin-top: -110px;
+            margin-left: 20px;
+            z-index: 1;
+            position: relative;
+        }
+        .explore button 
+        {
+            height: 60px;
+            width: 140px;
+            border-radius: 8px;
+            padding: 20px;
+            border: none;
+            margin-top: 38px;
+            background-color: #c74050;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: aliceblue;
+            font-size: 20px;
+            margin-left: -10px;
+        }
+</style>
+</head>
+<body>
+<header class="first">
+<!--header section starts-->
+    <a href="#" class="logo" style="font-size: 50px;">Giftzzz<span>.</span>com</a>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <div class="search-bar" style="margin-left: -10px;">
+        <input type="search"  name="search_prd" class="search_prd search-across-app ng-pristine ng-valid ng-valid-maxlength ng-touched" id="search_prd" maxlength="255" placeholder="Search Gifts..." tabindex="0" autocomplete="off" >
+    
+        <button class="search-btn" id="search_submit" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+    </div>
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    <div class="icons">
+        
+        
+        <a class="fas fa-home"></a>
+        <a class="fas fa-user"></a>
+        <a class="fas fa-shopping-cart"></a>&nbsp; &nbsp;
+        
+    </div>
+    <button type="button" style="margin-right: 20px;margin-left: 50px;"><a href="./loginregister.html" style="color: white;">Login</a></button>
+<!--header section ends-->
+</header>
+<div class="site-nav desktop-menu">			
+    <div class="container">     
+        <ul>
+            <li class="dropdown" id="113">
+                <a href="./loginregister.html">Cakes <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div class="dropdown-menu">
+                    <div class="menu-group" >
+                        <h3>By Type</h3>
+                            <ul id="smenudropdown">
+                                <li><a>Regular</a></li>
+                                <li><a>Special</a></li>
+                                <li><a>Photo</a></li>
+                                <li><a>Kids</a></li>
+                                <li><a>Heart Shaped</a></li>
+                                <li><a>Eggless</a></li>
+                                <li><a>Cupcakes</a></li>
+                                <li><a>Wedding</a></li>
+                            </ul>
+                    </div>
+                    <div class="menu-group" >
+                        <h3>By Flavour </h3>
+                        <ul id="smenudropdown">
+                            <li><a>Blackforest</a></li>
+                            <li><a>Chocolate</a></li>
+                            <li><a>Vanilla</a></li>
+                            <li><a>Butterscotch</a></li>
+                            <li><a>Fruit Cakes</a></li>
+                            <li><a>Red Velvet</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-group" >
+                        <h3>By Occasion </h3>
+                        <ul id="smenudropdown">
+                            <li><a>Anniversary</a></li>
+                            <li><a>Birthday</a></li>
+                            <li><a>Mothers Day </a></li>
+                            <li><a>Fathers Day</a></li>
+                            <li><a>Congratulations</a></li>
+                        </ul>
+                    </div>           
+                </div>
+            </li>
+            
+            <li class="dropdown" id="114">
+                <a href="./loginregister.html">Flowers <i class="fa fa-angle-down"></i></a>
+                <div class="dropdown-menu">
+                    <div class="menu-group">
+                        <h3>By Type</h3>
+                        <ul id="smenudropdown">
+                            <li><a>Roses</a></li>
+                            <li><a>Orchids</a></li>
+                            <li><a>Lilies</a></li>
+                            <li><a>Carnations</a></li>
+                            <li><a>Mixed Flowers</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="menu-group" >
+                        <h3>By Design </h3>
+                        <ul id="smenudropdown">
+                            <li><a>Bunches</a></li>
+                            <li><a>Vases</a></li>
+                            <li><a>Baskets</a></li>
+                            <li><a>Arrangements</a></li>
+                            <li><a>Designer</a></li>
+                            <li><a>Plants</a></li>
+                            <li><a>Heart Shaped</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-group" >
+                        <h3>By Occasion </h3>
+                        <ul id="smenudropdown">
+                            <li><a>Anniversary</a></li>
+                            <li><a>Birthday</a></li>
+                            <li><a>Mothers Day </a></li>
+                            <li><a>Fathers Day</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="dropdown" id="115">
+                <a href="./loginregister.html">Personalised <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div class="dropdown-menu">
+                    <div class="menu-group" >
+                        <h3>By Type</h3>
+                        <ul id="smenudropdown"> 
+                            <li><a>Mugs</a></li>
+                            <li><a>Lamps</a></li>
+                            <li><a>Pillows/Cushions</a></li>
+                            <li><a>Plates/Tiles</a></li>
+                            <li><a>Towels</a></li>
+                            <li><a>Chocolates</a></li>
+                            <li><a>T - Shirts</a></li>
+                            <li><a>Photo Frames</a></li>
+                            <li><a>Keychains</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-group" >
+                        <h3>By Occasion</h3>
+                        <ul id="smenudropdown">
+                            <li><a>Birthday</a></li>
+                            <li><a>Anniversary</a></li>
+                            <li><a>Mothers Day </a></li>
+                            <li><a>Fathers Day</a></li>
+                        </ul>
+                    </div>                   
+                </div>
+            </li>
+            
+            <li class="dropdown" id="116">
+                <a href="./loginregister.html">Birthday <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div class="dropdown-menu">
+                    <div class="menu-group" >
+                        <h3>By Product Type</h3>
+                        <ul id="smenudropdown">
+                            <li><a>Birthday Flowers </a></li>
+                            <li><a>Birthday Cakes</a></li>
+                            <li><a>Birthday Gifts</a></li>
+                            <li><a>Midnight Delivery</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-group" >
+                        <h3>By Relation</h3>
+                        <ul id="smenudropdown">
+                            <li><a>Husband</a></li>
+                            <li><a>Wife</a></li>
+                            <li><a>Girlfriend</a></li>
+                            <li><a>Boyfriend</a></li>
+                            <li><a>Mother </a></li>
+                            <li><a>Father</a></li>
+                            <li><a>Sister</a></li>
+                            <li><a>Brother</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            
+            <li class="dropdown" id="117">
+                <a href="./loginregister.html">Combos<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div class="dropdown-menu">
+                    <div class="menu-group" >
+                        <h3>Flower Combos</h3>
+                        <ul id="smenudropdown">
+                            <li><a>Flowers & Cake </a></li>
+                            <li><a>Flowers & Chocolates </a></li>
+                            <li><a>Flowers & Teddy </a></li>
+                            <li><a>Flowers & Card </a></li>
+                            <li><a>Flower Combos </a></li>
+
+                        </ul>
+                    </div> 
+                    <div class="menu-group" >
+                        <h3>Cake Combos</h3>
+                        <ul id="smenudropdown">
+                            <li><a>Cake & Flowers</a></li>
+                            <li><a>Cake & Chocolates</a></li>
+                            <li><a>Cake & Teddy</a></li>
+                            <li><a>Cake Combos </a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-group" >
+                        <h3>Others</h3>
+                        <ul id="smenudropdown">
+                            <li><a>3 In One Combos</a></li>
+                            <li><a>Teddy Combos</a></li>
+                            <li><a>Other Combos </a></li>
+                        </ul>
+                    </div>     
+                </div>
+            </li>
+            
+        
+            
+            <li class="dropdown" id="119">
+                <a href="./loginregister.html">Occasions <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <div class="dropdown-menu">
+                    <div class="menu-group" >
+                        <h3>Festivals</h3>
+                        <ul id="smenudropdown">
+                            <li><a>Holi</a></li>
+                            <li><a>Baisakhi</a></li>
+                            <li><a>Easter</a></li>
+                            <li><a>Eid</a></li>
+                            <li><a>Rakhi</a></li>
+                            <li><a>Navratri</a></li>
+                            <li><a>Dussehra</a></li>
+                            <li><a>Diwali</a></li>
+                            <li><a>Christmas</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="menu-group">
+                        <h3>Occasions</h3>
+                        <ul id="smenudropdown">
+                            <li><a>New Year</a></li>
+                            <li><a>Women's Day</a></li>
+                            <li><a>Valentines Day</a></li>
+                            <li><a>Mothers Day</a></li>
+                            <li><a>Fathers Day</a></li>
+                            <li><a>Friendship Day</a></li>
+                            <li><a>Teachers Day</a></li>
+                            <li><a>Childrens Day</a></li>   
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+            </li>    
+        </ul>
+    </div>
+ </div>
+<!--SLIDE SHOW -->
+<div id="slideshow">
+    <div class="slide-wrapper">            
+        <!-- Define each of the slides
+        and write the content -->
+        <div class="slide">
+                <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt30prodlp/banners/birthday_d_igp_banner_20221227.jpg" style="height: 570px;">
+        </div>
+
+        <div class="slide">
+                <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt32prodlp/banners/anniversary_d_igp_banner_20221226.jpg">
+        </div>
+
+        <div class="slide">
+                <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt32prodlp/banners/cakes_d_igp_banner_20220920.jpeg">
+        </div>
+
+        <div class="slide">
+            <img src="https://cdn.igp.com/f_auto,q_auto,t_pnopt32prodlp/banners/flowers_d_igp_banner_20220920.jpeg">
+        </div>
+    </div>
+</div>
+<!--Image inka text-->
+<div class="title-widget">
+    <img class="title-img lazy-load-image" src="https://cdn.igp.com/raw/upload/assets/svg-icons/gift-sets-20220610.svg" alt="title">
+    <div class="title-column">        
+        <div class="title-text"><h1>Unique Gifts Online</h1>
+        </div> 
+            <div class="title-subtitle-text">Curated to make every special moment a celebration</div>   
+    </div>   
+</div>
+<!--Image inka text ending-->
+    <!-- Gift display section-->
+    <div class="gift-section">
+    <div class="gift-banner-section">
+        <figure>
+            <img src="https://www.indiagift.in/media/indiagift-assets/images/gift-banner.jpg">
+        </figure>
+    </div>
+    <div class="list-category">
+        <div class="container">
+            <div class="flex space-between"> 
+                <div class="category-item">
+                    <figure>
+                        <a><img src="https://www.indiagift.in/media/images/banner/202102281614532699.png"  width="110" height="110"></a>
+                    </figure>
+                    <p class="gift_category">Cakes</p>
+                </div>
+                <div class="category-item">
+                    <figure>
+                        <a><img src="https://www.indiagift.in/media/images/banner/202102281614532627.png"  width="110" height="110"></a>
+                    </figure>
+                    <p class="gift_category">Birthday</p>
+                </div>
+                <div class="category-item">
+                    <figure>
+                        <a><img src="https://www.indiagift.in/media/images/banner/202102281614532721.png"  width="110" height="110"></a>
+                    </figure>
+                    <p class="gift_category">Anniversary</p>
+                </div>
+                <div class="category-item">
+                    <figure>
+                        <a><img src="https://www.indiagift.in/media/images/banner/202102281614532828.png"  width="110" height="110"></a>
+                    </figure>
+                    <p class="gift_category">Flowers</p>
+                </div>
+                <div class="category-item">
+                    <figure>
+                        <a><img src="https://www.indiagift.in/media/images/banner/202102281614532743.png"  width="110" height="110"></a>
+                    </figure>
+                    <p class="gift_category">Custom</p>
+                </div>
+                <div class="category-item">
+                    <figure>
+                        <a><img src="https://www.indiagift.in/media/images/banner/202102281614532881.png"  width="110" height="110"></a>
+                    </figure>
+                    <p class="gift_category">Teddy</p>
+                </div>
+                <div class="category-item">
+                    <figure>
+                        <a><img src="https://www.indiagift.in/media/images/banner/202102281614532858.png" width="110" height="110"></a>
+                    </figure>
+                    <p class="gift_category">Chocolates</p>
+                </div>                              
+            </div>
+        </div>
+    </div>
+</div>
+<div class="gift-banner-section">
+    <figure>
+        <img src="https://www.indiagift.in/media/indiagift-assets/images/gift-banner.jpg" style="margin-top: -35px;">
+    </figure>
+</div>
+
+<!--FlipCards Container Begins-->
+<div class="Maincontainer">
+    <div class="flipcontainer">
+        <div class="card">
+            <div class="front">
+                <img src="pictures/delivery flip.png" style="opacity:0.7;">
+            </div>
+            <div class="back">
+                <h3><u>Fast Delivery</u></h3>
+                <p>We deliver gifts all over India with fast delivery policy and same day deliveries for instant gifts</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flipcontainer">
+        <div class="card">
+            <div class="front">
+                <img src="pictures/qual flip.png" style="opacity:0.7";>
+            </div>
+            <div class="back">
+                <h3><u>Quality Products</u></h3>
+                <p>We always ensure the best quality products and bestsellers for our most trusted customers </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flipcontainer">
+        <div class="card">
+            <div class="front">
+                <img src="pictures\SECURE.png" style="opacity:0.7;">
+            </div>
+            <div class="back">
+                <h3><u>Secure Payment</u></h3>
+                <p>Your Payment information is processed securely and safely without any issues</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="flipcontainer">
+        <div class="card">
+            <div class="front">
+                <img src="pictures\contact_flip.png" style="opacity:0.7;">
+            </div>
+            <div class="back">
+                <h3><u>Contact Us</u></h3>
+                <p>Just send an email at giftzcom@gmail.com or call us at 6301790025</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="flipcontainer">
+        <div class="card">
+            <div class="front">
+                <img src="pictures\GIFT.png" style="opacity:0.7;">
+            </div>
+            <div class="back">
+                <h3><u>Sell Gifts</u></h3>
+                <p>You call sell your gifts (Handmade and customised items) online</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--FlipCards Container Ends-->
+<div class="Ad">
+    <h3>Promote your brands with customised giveaways</h3>
+</div><br>
+<div class="personalised">
+        <img class="img1" src="pictures\You can sell your.jpg" style="width: 1500px;margin-left: 10px;">
+        <a href="./loginregister.html""><img class="img2" src="pictures\sell now.jpg" style="width: 180px;height: 50px;border-radius: 5%;"></a>
+</div>
+
+<div class="handmade">
+    <div>
+        <p>Find the perfect handmade gift</p>
+    </div>
+    <div class="gift">
+        <img src="https://cdn.igp.com/f_auto,q_auto/banners/gift-boxes.png">
+    </div>
+    <div class="explore">
+        <a href="loginregister.html"><button>Explore</button></a>
+    </div>
+</div>
+<footer>
+    <div class="footerContainer">
+        <div class="socialIcons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-google-plus"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+    
+        <div class="footerNav">
+            <ul>
+                <li><a href="Abtpage.html">About Us</a></li>
+                <li><a href="FAQ.html">FAQs</a></li>
+                <li><a href="contactpage.html">Contact Us</a></li>
+                
+                <li><a href="Refund.html">Cancellation and Refund Policy</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footerBottom">
+        <p>Copyright &copy; 2023; Designed by <span class="designer">Giftzz.com</span></p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>SELLNOWFORM</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Oswald:wght@300&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Oswald:wght@300&family=Poltawski+Nowy:ital,wght@0,500;1,200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Dancing+Script:wght@600&family=Oswald:wght@300&family=Poltawski+Nowy:ital,wght@0,500;1,400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Playfair+Display&display=swap');
+        body 
+        {
+            background-image: url('./sellnowpagenewbanner.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 800px;
+            width: 1510px;
+            margin-top: -0px;
+        }
+        h1 
+        {
+            color: #8840a9;
+            font-size: 50px;
+            margin-left: 20px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .material-symbols-outlined 
+        {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48;
+            font-size: 2.5rem;
+            color: rgb(194, 126, 37);
+            padding: 10px;
+        }
+        header 
+        {
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+        }
+        .icons 
+        {
+            margin-left: 1000px;
+            margin-top: 30px;
+            justify-content: space-between;
+        }
+
+        .content 
+        {
+            position: absolute;
+            top: 110px;
+            left: 770px;
+            transform: translateX(-50%);
+            margin-left: 300px;
+        }
+        .content h1
+        {
+            color: #fff;
+            font-size: 80px;
+            width: 800px;
+            margin-bottom: 20px;
+            font-family: 'Dancing Script', cursive;
+            
+        }
+        .content h2
+        {
+            color: #655e5e;
+            font-size: 30px;
+            margin-bottom: 5px;
+            font-family: 'Poltawski Nowy', serif;
+            margin-left: 60px;
+        }
+        .content h3 
+        {
+            color: #fff;
+            font-size: 45px;
+            margin-bottom: 20px;
+            font-family: 'Amatic SC', cursive;
+            width: 800px;
+            margin-left: 95px;
+            letter-spacing: 1px;
+        }
+        .btns 
+        {
+            display: flex;
+            flex-direction: row;
+            margin-left: 270px;
+            margin-top: 40px;
+            gap: 30px;
+        }
+
+        .btns button 
+        {
+            background-color: rgb(217, 136, 31);
+            border-radius: 30px;
+            color: #fff;
+            font-size: 15px;
+            padding: 15px;
+            height: 50px;
+            border: none;
+            letter-spacing: 1px;
+        }
+        .icons a 
+        {
+            text-decoration: none;
+            color:#8840a9;
+        }
+        .icons a:hover 
+        {
+            color: #fefdff;
+        }
+
+        .form-container 
+        {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /*background-color: rgba(255, 255, 255, 0.2);*/
+            background-color: rgba(125, 108, 131, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px 0 rgba(33, 33, 40, 0.37);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+
+        form 
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label 
+        {
+            color: #fff;
+            font-size: 20px;
+            margin-left: -270px;
+            padding: 5px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"] 
+        {
+            background-color: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 15px;
+            width: 300px;
+            color: #fff;
+            font-size: 16px;
+        }
+        input[type="file"] 
+        {
+            color: #fff;
+            margin-left: -50px;
+        }
+
+
+        button[type="submit"] 
+        {
+            background-color: rgb(217, 136, 31);
+            border-radius: 30px;
+            color: #fff;
+            font-size: 15px;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Giftzzz.com</h1>
+        </div>
+        <div class="icons">
+            <span class="material-symbols-outlined"><a href="afterlogin.html">home</a></span>
+            <span class="material-symbols-outlined"><a href="./Myaccount.php">account_circle</a></span>
+            <span class="material-symbols-outlined"><a href="./Giftzzcom.html">logout</a></span>
+        </div>
+    </header>
+    <div class="content" id="content">
+        <h1>Ready to sell your items!!!</h1>
+        <h2>Turn your ideas into personalised and unique <br>gifts perfect for any occasion and recipient</h2>
+        <h3>Be a Santa, and fill hearts with happiness</h3>
+
+        <div class="btns">
+            <div><button class="b" onclick="showForm()">Sell now</button></div>
+            <div><button class="b" onclick="redirectToPage()">My items</button></div>
+        </div>
+    </div>
+
+
+    <div class="form-container" id="formContainer">
+        <span class="close-btn" onclick="closeForm()">&times;</span>
+        <form action="Myitems.php" method="post" enctype="multipart/form-data" onsubmit="redirectToPage()">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter Your Email-Id" required><br>
+
+            <label for="name">Name:</label>
+            <input type="text" id="itemName" name="itemName" placeholder="Enter the Item Name"  required><br>
+
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" placeholder="Enter the Item Price" required><br>
+
+            <label for="file" style="margin-left: -210px;">Upload File:</label>
+            <input type="file" id="itemImage" name="itemImage" required><br>
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+
+    
+
+    <script>
+        function showForm() {
+            document.getElementById("formContainer").style.display = "block";
+            document.getElementById("content").style.display = "none";
+        }
+
+        function closeForm() {
+            document.getElementById("formContainer").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+
+        function redirectToPage() 
+        {
+            window.location.href = "Myitems.php";
+        }
+    </script>
+</body>
+</html>

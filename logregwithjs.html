@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LogRegJS</title>
+    
+    <!---we had linked our css file----->
+    <style>
+        .full-page
+        {
+            height: 715px;
+            width: 1535px;
+            /*background-image: linear-gradient(rgba(49, 44, 44, 0.4),rgba(16, 15, 15, 0.4)),url(img2.jpg);
+            /*background-position: center;*/
+            background-image: url(loginpagebg.jpg);
+            background-size: cover;
+            position: absolute;
+            overflow: hidden;
+            overflow-y: hidden;
+            border: none;
+            margin-left: -8px;
+            margin-top: -10px;
+        }
+
+        .form-box
+        {
+            width:350px;
+            height:480px;
+            position:sticky;
+            /*margin:2% auto;*/
+            margin-left: 850px;
+            margin-top: 120px;
+            background:rgba(0,0,0,0.3);
+            border-radius: 30px;
+            padding:10px;
+            overflow: hidden;
+        }
+        ::placeholder 
+        {
+            color: #c79595;
+            opacity: 1; /* Firefox */
+            font-size: 13px;
+        }
+        .button-box
+        {
+            width:220px;
+            margin:35px auto;
+            position:relative;
+            box-shadow: 0 0 20px 9px #ff61241f;
+            border-radius: 30px;
+          
+        }
+        .toggle-btn
+        {
+            padding:10px 30px;
+            cursor:pointer;
+            background:transparent;
+            border:0;
+            outline: none;
+            position: relative;
+            color: white;
+        }
+        #btn
+        {
+            top: 0;
+            left:0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            /*background: #F3C693;
+            background: #d18a8a;*/
+           
+            background: #da8f8f;
+            border-radius: 30px;
+            transition: .5s;
+        }
+        .input-group-login
+        {
+            top: 150px;
+            position:absolute;
+            width:280px;
+            transition:.5s;
+        }
+        .input-group-register
+        {
+            top: 120px;
+            position:absolute;
+            width:280px;
+            transition:.5s;
+        }
+        .input-field
+        {
+            width: 100%;
+            padding:10px 0;
+            margin:5px 0;
+            border-left:0;
+            border-top:0;
+            border-right:0;
+            border-bottom: 1px solid #999;
+            outline:none;
+            background: transparent;
+        }
+        .submit-btn
+        {
+            width: 85%;
+            padding: 10px 30px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            background: #da8f8f;
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+            margin-top: 30px;
+        }
+        span
+        {
+            color:#c79595;
+            font-size:15px;
+            bottom:68px;
+            position:absolute;
+        }
+        #login
+        {
+            left:50px;
+        }
+        #login input
+        {
+            color:white;
+            font-size:15;
+        }
+        #register
+        {
+            left:450px;
+        }
+        #register input
+        {
+            color:white;
+            font-size: 15;
+        }
+    </style>
+</head>
+<body>
+    <div class="full-page">
+        <div id='login-form'class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button'onclick='login()'class='toggle-btn'>Login</button>
+                    <button type='button'onclick='register()'class='toggle-btn'>Sign Up</button>
+                </div>
+
+                <!--Login Form creation-->
+                <form id='login' class='input-group-login' action="newlogin.php" method="post">
+                    <input type='text'class='input-field'placeholder='Email Id' name="mail" required >
+                    <input type='password'class='input-field'placeholder='Enter Password' name= "pwd" required>
+                    <button type='submit'class='submit-btn'>Login</button>
+                </form>
+
+                <!--SignUp Form creation-->
+                <form id='register' class='input-group-register' action="conn.php" method="post">
+                    <input type='text'class='input-field'placeholder='Username' name="username" id="username" required>
+                    <input type='email'class='input-field'placeholder='Email' name="email" id="email" required>
+                    <input type='password'class='input-field'placeholder='Enter Password' name="password" id="password" required>
+                    <input type='password'class='input-field'placeholder='Confirm Password' name="cpassword" id="cpassword" required>
+                    <input type='text'class='input-field'placeholder='Contact' name="contact" id="contact" required>
+                    <input type='text'class='input-field'placeholder='Address' name="address" id="address"required>
+                    <button type='submit'class='submit-btn'>Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var x=document.getElementById('login');
+		var y=document.getElementById('register');
+		var z=document.getElementById('btn');
+		function register()
+		{
+			x.style.left='-400px';
+			y.style.left='50px';
+			z.style.left='110px';
+		}
+		function login()
+		{
+			x.style.left='50px';
+			y.style.left='450px';
+			z.style.left='0px';
+		}
+	</script>
+	<script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    <script>
+        // Get the login and registration forms and submit buttons
+        const loginForm = document.getElementById("login");
+        const registrationForm = document.getElementById("register");
+        const loginButton = document.querySelector("#login button[type='submit']");
+        const registrationButton = document.querySelector("#register button[type='submit']");
+
+        // Add event listener for form submission
+        loginForm.addEventListener("submit", validateLoginForm);
+        registrationForm.addEventListener("submit", validateRegistrationForm);
+
+        function validateLoginForm(event) 
+        {
+        event.preventDefault();
+
+        // Get the input fields for the login form
+        const emailField = loginForm.querySelector("input[type='text']");
+        const passwordField = loginForm.querySelector("input[type='password']");
+
+        // Check if email and password fields are empty
+        if (!emailField.value.trim() || !passwordField.value.trim()) {
+            alert("Please enter your email and password.");
+            return;
+        }
+
+        // Submit the form if input fields are not empty
+        loginForm.submit();
+        }
+
+        function validateRegistrationForm(event) 
+        {
+        event.preventDefault();
+
+        // Get the input fields for the registration form
+        const usernameField = registrationForm.querySelector("input[type='text']");
+        const emailField = registrationForm.querySelector("input[type='email']");
+        const passwordField = registrationForm.querySelectorAll("input[type='password']")[0];
+        const confirmPasswordField = registrationForm.querySelectorAll("input[type='password']")[1];
+        const contactField = registrationForm.querySelectorAll("input[type='tel']")[0];
+        const addressField = registrationForm.querySelectorAll("input[type='text']")[1];
+
+        // Check if any input fields are empty
+        if (!usernameField.value.trim() || !emailField.value.trim() || !passwordField.value.trim() || !confirmPasswordField.value.trim() || !contactField.value.trim() || !addressField.value.trim()) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Check if email is in valid format
+        const emailPattern = /^\S+@\S+\.\S+$/;
+        if (!emailPattern.test(emailField.value)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        // Check if password and confirm password match
+        if (passwordField.value !== confirmPasswordField.value) {
+            alert("Passwords do not match. Please try again.");
+            return;
+        }
+        // contactField validation
+        const contactPattern = /^[0-9]{10}$/;
+
+        if (!contactPattern.test(contactField.value)) {
+            alert("Please enter a valid contact number.");
+            return;
+        }
+            
+        // Check if password is at least 8 characters long
+        if (passwordField.value.length < 8) {
+            alert("Password must be at least 8 characters long.");
+            return;
+        }
+        // Submit the form if input fields are valid
+        registrationForm.submit();
+        }
+
+    </script>
+</body>
+</html>
